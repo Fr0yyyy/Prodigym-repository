@@ -13,3 +13,10 @@
 .externalNativeBuild
 .cxx
 local.properties
+/.idea/misc.xml
+/.idea/deploymentTargetSelector.xml
+/.idea/markdown.xml
+.kotlin/
+.ai/
+.claude/
+.clauderules
