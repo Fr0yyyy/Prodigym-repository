@@ -2,6 +2,10 @@ package com.example.prodigym.data.dataSource.exercise.remote
 
 import com.google.gson.annotations.SerializedName
 
+data class ExercisesListDto(
+    @SerializedName("excercises_ids") val exerciseIds: List<String>
+)
+
 data class ExerciseDto(
     @SerializedName("id") val id: String,
     @SerializedName("name") val name: String,
