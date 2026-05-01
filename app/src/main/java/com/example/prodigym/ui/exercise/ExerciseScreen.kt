@@ -1,5 +1,6 @@
 package com.example.prodigym.ui.exercise
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -51,19 +52,29 @@ private fun ExerciseScreenContent(
 ) {
     when (uiState) {
         is ExerciseUiState.Loading -> {
-            Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            Box(
+                modifier = modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.background),
+                contentAlignment = Alignment.Center
+            ) {
                 CircularProgressIndicator(color = MaterialTheme.colorScheme.primary)
             }
         }
         is ExerciseUiState.Success -> {
-            LazyColumn(modifier = modifier.fillMaxSize()) {
+            LazyColumn(modifier = modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)) {
                 items(uiState.exercises) { exercise ->
                     ExerciseItem(exercise = exercise)
                 }
             }
         }
         is ExerciseUiState.Error -> {
-            Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            Box(
+                modifier = modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.background),
+                contentAlignment = Alignment.Center
+            ) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.spacedBy(16.dp)
